@@ -6,4 +6,4 @@ seaborn
 scikit-learn
 scikit-surprise
 scipy==1.9.3
-gensim==4.1.0
+gensim
