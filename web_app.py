@@ -20,6 +20,7 @@ def load_models_and_data():
         svd_algo = pickle.load(f)
     dictionary = corpora.Dictionary.load('gensim_dictionary.dict')
     corpus = corpora.MmCorpus('gensim_corpus.mm')
+    #corpus.index
     tfidf = models.TfidfModel.load('gensim_tfidfmodel')
     tfidf_matrix = scipy.sparse.load_npz('sklearn_tfidf_matrix.npz')
     # Tải ma trận cosine similarity từ file .npz (sparse format)
