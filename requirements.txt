@@ -5,5 +5,5 @@ matplotlib
 seaborn
 scikit-learn
 scikit-surprise
-gensim
-scipy
+scipy==1.10.0
+gensim==4.1.0
