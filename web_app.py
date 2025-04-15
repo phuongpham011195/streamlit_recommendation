@@ -23,12 +23,13 @@ def load_models_and_data():
     corpus = list(corpus)
     tfidf = models.TfidfModel.load('gensim_tfidfmodel')
     #tfidf_matrix = scipy.sparse.load_npz('sklearn_tfidf_matrix.npz')
-    tfidf_matrix = np.load('sklearn_cosine_sim_sparse_.npz')
+    tfidf_matrix = np.load('sklearn_tfidf_matrix_.npz')
     # Tải ma trận cosine similarity từ file .npz (sparse format)
     #cosine_sim_sparse = scipy.sparse.load_npz('sklearn_cosine_sim_sparse.npz')
     cosine_sim_sparse = np.load('sklearn_cosine_sim_sparse_.npz')
     # Chuyển ma trận thưa thành ma trận mật (dense) để sử dụng
-    cosine_sim = cosine_sim_sparse.toarray()
+    #cosine_sim = cosine_sim_sparse.toarray()
+    cosine_sim = cosine_sim_sparse
     df_product = pd.read_csv('processed_data.csv')
     df_rating = pd.read_csv('processed_ratings.csv')
     return svd_algo, dictionary, corpus, tfidf, tfidf_matrix, cosine_sim, df_product, df_rating
