@@ -5,7 +5,7 @@ import pickle
 import os
 from gensim import corpora, models, similarities
 import numpy as np
-#import scipy.sparse
+import scipy.sparse
 import plotly.express as px
 
 # Cấu hình trang
@@ -22,11 +22,11 @@ def load_models_and_data():
     corpus = corpora.MmCorpus('gensim_corpus.mm')
     corpus = list(corpus)
     tfidf = models.TfidfModel.load('gensim_tfidfmodel')
-    #tfidf_matrix = scipy.sparse.load_npz('sklearn_tfidf_matrix.npz')
-    tfidf_matrix = np.load('sklearn_tfidf_matrix_.npz')
+    tfidf_matrix = scipy.sparse.load_npz('sklearn_tfidf_matrix.npz')
+    #tfidf_matrix = np.load('sklearn_tfidf_matrix_.npz')
     # Tải ma trận cosine similarity từ file .npz (sparse format)
-    #cosine_sim_sparse = scipy.sparse.load_npz('sklearn_cosine_sim_sparse.npz')
-    cosine_sim_sparse = np.load('sklearn_cosine_sim_sparse_.npz')
+    cosine_sim_sparse = scipy.sparse.load_npz('sklearn_cosine_sim_sparse.npz')
+    #cosine_sim_sparse = np.load('sklearn_cosine_sim_sparse_.npz')
     # Chuyển ma trận thưa thành ma trận mật (dense) để sử dụng
     #cosine_sim = cosine_sim_sparse.toarray()
     cosine_sim = cosine_sim_sparse
