@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import os
-from gensim import corpora, models, similarities
+#from gensim import corpora, models, similarities
 import numpy as np
 #import scipy.sparse
 import plotly.express as px
